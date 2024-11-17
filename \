@@ -4,17 +4,17 @@ import { ref, watch } from "vue";
 // Reactive state for theme
 
 const preference = ref(null);
-const isDarkTheme = ref(null);
-const currentTheme = ref(null);
 
 onMounted(() => {
   preference.value = localStorage.getItem("theme");
-  isDarkTheme.value = preference.value == "dark";
-  currentTheme.value = preference.value;
 });
+
+const isDarkTheme = ref(preference.value === "dark");
+const currentTheme = ref(preference.value);
 
 // Watch for changes to the checkbox and update the theme
 watch(isDarkTheme, (newValue) => {
+  console.log(newValue);
   currentTheme.value = newValue ? "dark" : "light";
   document.documentElement.setAttribute("data-theme", currentTheme.value);
   localStorage.setItem("theme", currentTheme.value); // Save preference
@@ -23,16 +23,16 @@ watch(isDarkTheme, (newValue) => {
 <template>
   <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl text-primary">BOTAR ATENISTA</a>
+      <a class="btn btn-ghost text-xl">BOTAR ATENISTA</a>
     </div>
     <div class="flex-2">
-      <a class="btn btn-ghost text-l">Home</a>
+      <a class="btn btn-ghost text-xl">Home</a>
     </div>
     <div class="flex-2">
-      <a class="btn btn-ghost text-l">Posts</a>
+      <a class="btn btn-ghost text-xl">Posts</a>
     </div>
     <div class="flex-2">
-      <a class="btn btn-ghost text-l">Contacts</a>
+      <a class="btn btn-ghost text-xl">Contacts</a>
     </div>
     <div class="flex-none">
       <!--button class="btn btn-square btn-ghost">
