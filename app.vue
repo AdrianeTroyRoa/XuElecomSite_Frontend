@@ -4,5 +4,6 @@
     <!--NuxtWelcome /-->
     <Navbar />
     <Hero />
+    <Posts />
   </div>
 </template>
