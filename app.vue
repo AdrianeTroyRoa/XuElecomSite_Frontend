@@ -2,7 +2,7 @@
   <div>
     <!--NuxtRouteAnnouncer /-->
     <!--NuxtWelcome /-->
-    <Header />
+    <Navbar />
     <Hero />
   </div>
 </template>
