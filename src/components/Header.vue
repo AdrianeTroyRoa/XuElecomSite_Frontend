@@ -23,7 +23,7 @@ watch(isDarkTheme, (newValue) => {
 <template>
   <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl text-primary">BOTAR ATENISTA</a>
+      <a class="btn btn-ghost text-xl text-primary font-bold">BOTAR ATENISTA</a>
     </div>
     <div class="flex-2">
       <a class="btn btn-ghost text-l">Home</a>
