@@ -5,5 +5,6 @@
     <Navbar />
     <Hero />
     <Posts />
+    <Contacts />
   </div>
 </template>
