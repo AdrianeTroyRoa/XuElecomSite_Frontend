@@ -5,6 +5,6 @@ export default <Partial<Config>>{
   plugins: [daisyui],
 
   daisyui: {
-    themes: ["cupcake", "dark", "cmyk"],
+    themes: [false],
   },
 };
