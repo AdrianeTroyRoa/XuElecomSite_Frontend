@@ -5,6 +5,16 @@ export default <Partial<Config>>{
   plugins: [daisyui],
 
   daisyui: {
-    themes: [false],
+    themes: [
+      {
+        xuelecom: {
+          primary: "#0E0C40",
+          secondary: "#303473",
+          accent: "#F2D649",
+          neutral: "#F2AC29",
+          "base-100": "#ffffff",
+        },
+      },
+    ],
   },
 };
