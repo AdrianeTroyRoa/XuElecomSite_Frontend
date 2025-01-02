@@ -2,9 +2,10 @@
   <div>
     <!--NuxtRouteAnnouncer /-->
     <!--NuxtWelcome /-->
-    <Navbar />
-    <Hero />
-    <Posts />
-    <Contacts />
+    <!--Navbar /-->
+    <!--Hero /-->
+    <!--Posts /-->
+    <!--Contacts /-->
+    <MarkdownEditor />
   </div>
 </template>
