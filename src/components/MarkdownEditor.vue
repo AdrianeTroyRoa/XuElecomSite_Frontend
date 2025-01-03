@@ -42,11 +42,15 @@ onUnmounted(() => {
 
 // Reactive variable to store markdown content
 const markdownContent = ref(
-  '# This is heading 1\n## This is heading2\nI assume you got what heading 3 and so on is.<br>And yeah, you just saw how to breakline. You don\'t need that syntax though if a text with a different format is before this :)\nFor images just insert the link in the src in this syntax:<img src="https://cdn.bhdw.net/im/dark-nature-sunset-wallpaper-120990_w635.webp" />\n> This is recommended for quotation reports or something like that.\n\nYes, we sometimes need double returns (enter key) to not be part of a formatting. But to be safe, why not always?\n\n<br>**This is a bold text**\n<br>*This is an italized text*\n\n<br>For more syntax info, go to this link: <a href="https://www.markdownguide.org/basic-syntax/">https://www.markdownguide.org/basic-syntax/</a>',
+  '# This is heading 1\n## This is heading2\nI assume you got what heading 3 and so on is.<br>And yeah, you just saw how to breakline. You don\'t need that syntax though if a text with a different format is before this :)\nFor images just insert the link in the src in this syntax:\n<img src="https://cdn.bhdw.net/im/dark-nature-sunset-wallpaper-120990_w635.webp" />\n\n> This is recommended for quotation reports or something like that.\n\n<br>**This is a bold text**\n<br>*This is an italized text*\n\n<br>For more syntax info, go to this link: <a href="https://www.markdownguide.org/basic-syntax/">https://www.markdownguide.org/basic-syntax/</a>',
 );
 
 // Computed property to convert markdown to HTML
 const renderMarkdown = computed(() => marked(markdownContent.value));
+
+function showInputtedContent() {
+  console.log(markdownContent.value)
+}
 </script>
 
 <template>
@@ -62,7 +66,7 @@ const renderMarkdown = computed(() => marked(markdownContent.value));
       </div>
       <div class="ml-4 text-xs">{{ formattedDateToday }}</div>
     </div>
-    <button class="btn btn-secondary flex-none">Save</button>
+    <button class="btn btn-secondary flex-none" @click="showInputtedContent">Save</button>
   </div>
   <div class="flex flex-col md:flex-row w-full">
     <div class="w-full md:w-1/2 p-4">
