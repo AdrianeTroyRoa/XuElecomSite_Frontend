@@ -6,6 +6,7 @@
     <!--Hero /-->
     <!--Posts /-->
     <!--Contacts /-->
-    <MarkdownEditor />
+    <!--MarkdownEditor /-->
+    <CreateArticle />
   </div>
 </template>
