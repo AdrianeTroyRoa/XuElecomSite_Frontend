@@ -1,46 +1,3 @@
-<template>
-  <div class="flex p-4">
-    <div class="flex-1">
-      <div
-        class="text-4xl font-bold focus:outline-none"
-        contenteditable="true"
-        @input="updateArticleTitle"
-        spellcheck="true"
-      >
-        {{ articleTitle }}
-      </div>
-      <div class="ml-4 text-xs">{{ formattedDateToday }}</div>
-    </div>
-    <button class="btn btn-secondary flex-none">Save</button>
-  </div>
-  <div class="flex flex-col md:flex-row w-full">
-    <div class="w-full md:w-1/2 p-4">
-      <div class="text-3xl">Markdown Editor</div>
-      <hr />
-      <br />
-      <!-- Input field for markdown -->
-      <textarea
-        v-model="markdownContent"
-        placeholder="Write your markdown here..."
-        rows="10"
-        cols="50"
-        class="bg-zinc-100 w-full h-[calc(100vh-13rem)] font-mono p-4"
-      ></textarea>
-    </div>
-    <!-- Rendered markdown output -->
-    <div class="w-full md:w-1/2 p-4">
-      <div class="text-3xl">Preview</div>
-      <hr />
-      <br />
-      <div class="bg-zinc-100 p-4 w-full h-[calc(100vh-13rem)] overflow-y-auto">
-        <div class="flex align-items-center">
-          <article class="prose" v-html="renderMarkdown"></article>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 // Import the markdown parser
 import { marked } from "marked";
@@ -91,3 +48,46 @@ const markdownContent = ref(
 // Computed property to convert markdown to HTML
 const renderMarkdown = computed(() => marked(markdownContent.value));
 </script>
+
+<template>
+  <div class="flex p-4">
+    <div class="flex-1">
+      <div
+        class="text-4xl font-bold focus:outline-dashed mr-7 focus:p-3"
+        contenteditable="true"
+        @input="updateArticleTitle"
+        spellcheck="true"
+      >
+        {{ articleTitle }}
+      </div>
+      <div class="ml-4 text-xs">{{ formattedDateToday }}</div>
+    </div>
+    <button class="btn btn-secondary flex-none">Save</button>
+  </div>
+  <div class="flex flex-col md:flex-row w-full">
+    <div class="w-full md:w-1/2 p-4">
+      <div class="text-3xl">Markdown Editor</div>
+      <hr />
+      <br />
+      <!-- Input field for markdown -->
+      <textarea
+        v-model="markdownContent"
+        placeholder="Write your markdown here..."
+        rows="10"
+        cols="50"
+        class="bg-zinc-100 w-full h-[calc(100vh-13rem)] font-mono p-4"
+      ></textarea>
+    </div>
+    <!-- Rendered markdown output -->
+    <div class="w-full md:w-1/2 p-4">
+      <div class="text-3xl">Preview</div>
+      <hr />
+      <br />
+      <div class="bg-zinc-100 p-4 w-full h-[calc(100vh-13rem)] overflow-y-auto">
+        <div class="flex align-items-center">
+          <article class="prose" v-html="renderMarkdown"></article>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
