@@ -1,12 +1,10 @@
 <template>
   <div>
-    <!--NuxtRouteAnnouncer /-->
-    <!--NuxtWelcome /-->
-    <!--Navbar /-->
-    <!--Hero /-->
-    <!--Posts /-->
-    <!--Contacts /-->
-    <!--MarkdownEditor /-->
-    <CreateArticle />
+    <NuxtRouteAnnouncer />
+    <NuxtWelcome />
+    <Navbar />
+    <Hero />
+    <Posts />
+    <Contacts />
   </div>
 </template>
