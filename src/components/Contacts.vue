@@ -2,7 +2,7 @@
 const inputItems: string[] = ["name", "email", "subject"];
 </script>
 <template>
-  <div class="container mx-auto mt-5" id="contact">
+  <div class="mt-5 min-h-screen flex flex-col items-center justify-center" id="contact">
     <div class="flex-col justify-center items-center text-center">
       <h1 class="text-5xl font-bold mb-3">Contact Us</h1>
       <p class="text-xl">Have questions? Submit them here!</p>

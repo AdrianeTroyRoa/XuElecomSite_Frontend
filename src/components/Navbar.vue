@@ -2,13 +2,13 @@
 import { ref, watch, onMounted } from "vue";
 </script>
 <template>
-  <div class="navbar bg-base-100 fixed w-full top-0 z-20">
+  <div class="navbar bg-gray-100 fixed w-full top-0 z-20 p-4">
     <div class="flex-1">
-      <a class="btn btn-ghost">
-        <Flex column>
+      <a class="btn btn-ghost hover:bg-gray-100">
+        <div column>
           <div class="text-xl text-primary font-bold">BOTAR ATENISTA</div>
           <div class="rounded-full bg-[#FAD60B] p-1 px-12 shadow-black shadow-md font-bold">THINK. ACT. VOTE.</div>
-        </Flex>
+        </div>
       </a>
     </div>
     <div class="flex-2">

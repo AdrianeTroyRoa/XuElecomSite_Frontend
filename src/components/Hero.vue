@@ -1,7 +1,7 @@
 <template>
-  <section class="bg-white h-screen flex items-center justify-center">
+  <section class="hero min-h-screen flex items-center justify-center">
     <div
-      class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
+      class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 hero-content"
     >
       <div class="mr-auto place-self-center lg:col-span-7">
         <h1
