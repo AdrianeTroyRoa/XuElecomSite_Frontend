@@ -2,7 +2,7 @@
 import { ref, watch, onMounted } from "vue";
 </script>
 <template>
-  <div class="navbar bg-base-100">
+  <div class="navbar bg-base-100 fixed w-full top-0 z-20">
     <div class="flex-1">
       <a class="btn btn-ghost">
         <Flex column>
