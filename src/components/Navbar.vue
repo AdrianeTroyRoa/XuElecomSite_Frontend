@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from "vue";
 </script>
 <template>
   <div class="navbar bg-gray-100 fixed w-full top-0 z-20 p-4">
