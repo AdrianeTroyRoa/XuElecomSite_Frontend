@@ -43,7 +43,7 @@
         >
           <span class="font-semibold text-gray-400 uppercase">Follow us</span>
           <!-- Logo section -->
-          <div class="flex items-center justify-center mt-8 gap-4">
+          <div class="flex items-center justify-center mt-8 gap-2">
             <!-- Facebook logo -->
             <a href="https://www.facebook.com/profile.php?id=61566344823082" target="_blank" class="btn btn-link">
               <svg
