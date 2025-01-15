@@ -1,5 +1,5 @@
 <template>
-  <section class="min-h-screen bg-white">
+  <section class="min-h-screen bg-white flex flex-col justify-center">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
         <h2
@@ -35,7 +35,7 @@
               </svg>
               Article
             </span>
-          <span class="text-sm">{{formattedDateToday}}</span>
+            <span class="text-sm">{{ formattedDateToday }}</span>
           </div>
           <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
             <a href="#">Hello World! This is an Elecom Article</a>
@@ -89,7 +89,7 @@
               </svg>
               Article
             </span>
-          <span class="text-sm">{{formattedDateToday}}</span>
+            <span class="text-sm">{{ formattedDateToday }}</span>
           </div>
           <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
             <a href="#">Hello World! This is an Elecom Article</a>
@@ -143,7 +143,7 @@
               </svg>
               Article
             </span>
-          <span class="text-sm">{{formattedDateToday}}</span>
+            <span class="text-sm">{{ formattedDateToday }}</span>
           </div>
           <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
             <a href="#">Hello World! This is an Elecom Article</a>
@@ -197,7 +197,7 @@
               </svg>
               Article
             </span>
-          <span class="text-sm">{{formattedDateToday}}</span>
+            <span class="text-sm">{{ formattedDateToday }}</span>
           </div>
           <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
             <a href="#">Hello World! This is an Elecom Article</a>
@@ -229,6 +229,9 @@
             </a>
           </div>
         </article>
+      </div>
+      <div class="my-12 flex justify-center">
+        <button class="btn">See more</button>
       </div>
     </div>
   </section>
