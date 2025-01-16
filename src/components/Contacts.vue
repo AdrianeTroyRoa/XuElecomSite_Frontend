@@ -1,5 +1,5 @@
-<script setup lang="ts">
-const inputItems: string[] = ["name", "email", "subject"];
+<script setup>
+const inputItems = ["name", "email", "subject"];
 </script>
 <template>
   <section
@@ -17,12 +17,12 @@ const inputItems: string[] = ["name", "email", "subject"];
       </p>
     </div>
     <div class="mt-5">
-      <form method="POST" name="contact" class="max-w-sm mx-auto">
+      <form method="POST" name="contact" class="max-w-lg mx-auto">
         <div v-for="(item, index) in inputItems" :key="index">
           <div class="mb-5">
             <input
               type="text"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-96 sm:w-64 p-2.5"
               :id="item"
               :name="item"
               :placeholder="item.charAt(0).toUpperCase() + item.slice(1)"
@@ -32,9 +32,9 @@ const inputItems: string[] = ["name", "email", "subject"];
         </div>
         <textarea
           id="message"
-          rows="4"
+          rows="5"
           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-          placeholder="Leave a comment..."
+          placeholder="Message..."
         ></textarea>
         <br /><br />
         <div class="text-center mb-5">
