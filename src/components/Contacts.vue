@@ -1,9 +1,7 @@
-<script setup>
-const inputItems = ["name", "email", "subject"];
-</script>
 <template>
   <section
-    class="mt-5 min-h-screen flex flex-col items-center justify-center"
+    :style="{ backgroundImage: `url(${bgImage})` }"
+    class="mt-5 min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
     id="contact"
   >
     <div class="flex-col justify-center items-center text-center">
@@ -44,3 +42,9 @@ const inputItems = ["name", "email", "subject"];
     </div>
   </section>
 </template>
+
+<script setup>
+import bgImage from "@/assets/bgContact.png";
+
+const inputItems = ["name", "email", "subject"];
+</script>
