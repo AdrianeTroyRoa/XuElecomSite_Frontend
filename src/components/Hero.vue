@@ -1,7 +1,10 @@
 <template>
-  <section class="hero min-h-screen flex items-center justify-center">
+  <section
+    :style="{ backgroundImage: `url(${bgImage})` }"
+    class="hero min-h-screen flex items-center justify-center bg-cover bg-center"
+  >
     <div
-      class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 hero-content"
+      class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
     >
       <div class="mr-auto place-self-center lg:col-span-7">
         <h1
@@ -45,7 +48,11 @@
           <!-- Logo section -->
           <div class="flex items-center justify-center mt-8 gap-2">
             <!-- Facebook logo -->
-            <a href="https://www.facebook.com/profile.php?id=61566344823082" target="_blank" class="btn btn-link">
+            <a
+              href="https://www.facebook.com/profile.php?id=61566344823082"
+              target="_blank"
+              class="btn btn-link"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 36 36"
@@ -106,3 +113,7 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import bgImage from "@/assets/background.png";
+</script>
