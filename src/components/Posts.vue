@@ -1,13 +1,16 @@
 <template>
-  <section class="min-h-screen bg-white flex flex-col justify-center">
+  <section
+    class="min-h-screen flex flex-col justify-center bg-primary"
+    id="posts"
+  >
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
         <h2
-          class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900"
+          class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-white"
         >
           Latest Posts
         </h2>
-        <p class="font-light text-gray-500 sm:text-xl">
+        <p class="font-light text-white sm:text-xl">
           Explore the latest activities of XU Elecom by diving into the articles
           below
         </p>

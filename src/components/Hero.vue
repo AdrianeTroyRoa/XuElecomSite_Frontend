@@ -1,7 +1,8 @@
 <template>
   <section
     :style="{ backgroundImage: `url(${bgImage})` }"
-    class="hero min-h-screen flex items-center justify-center bg-cover bg-center"
+    id="home"
+    class="min-h-[calc(100vh-5rem)] flex items-center justify-center bg-cover bg-center"
   >
     <div
       class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
