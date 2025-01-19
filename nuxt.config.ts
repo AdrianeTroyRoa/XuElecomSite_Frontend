@@ -10,5 +10,4 @@ export default defineNuxtConfig({
     },
   },
   modules: ["@nuxtjs/tailwindcss"],
-  components: [{ path: "~/src/components", extensions: ["vue"] }],
 });

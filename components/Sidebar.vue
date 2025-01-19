@@ -70,8 +70,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-
 const isSidebarOpen = ref(false);
 
 const toggleSidebar = () => {

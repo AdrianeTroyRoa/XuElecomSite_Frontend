@@ -1,10 +1,5 @@
 <template>
-  <div>
-    <Navbar />
-    <Hero />
-    <Posts />
-    <Contacts />
-  </div>
+  <NuxtPage />
 </template>
 
 <script setup>
