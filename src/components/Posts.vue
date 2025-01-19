@@ -1,6 +1,6 @@
 <template>
   <section
-    class="min-h-screen flex flex-col justify-center bg-primary"
+    class="min-h-screen flex flex-col justify-center bg-accent"
     id="posts"
   >
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">

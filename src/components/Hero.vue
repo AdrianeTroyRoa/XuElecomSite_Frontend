@@ -4,7 +4,8 @@
     id="home"
     class="min-h-screen bg-cover bg-center flex flex-col justify-between"
   >
-    <nav class="navbar bg-gray-100 w-full top-0 z-20 p-4">
+  <!--Navbar with Hero contents-->
+    <nav class="navbar w-full top-0 z-20 p-4">
       <div class="flex-1">
         <a class="btn btn-ghost hover:bg-gray-100">
           <div column>
@@ -26,13 +27,15 @@
         <Sidebar class="sm:hidden" />
       </div>
     </nav>
+
+    <!--Proper Hero contents-->
     <div class="mx-auto">
       <div
         class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
       >
         <div class="mr-auto place-self-center lg:col-span-7">
           <h1
-            class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl"
+            class="mb-4 text-4xl text-primary font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl"
           >
             XU-CSG Electoral Commission
           </h1>
