@@ -23,7 +23,8 @@
             elections at Xavier Ateneo
           </p>
           <a
-            href="#"
+            href="https://drive.google.com/file/d/1OTlWiQzx7eVpJQna5dTFdOprip5SZMbx/view"
+            target="_blank"
             class="inline-flex items-center justify-center px-5 py-3 mr-3 font-medium text-center rounded-lg btn btn-primary focus:ring-4 focus:ring-primary-300"
           >
             Omnibus Code 2024

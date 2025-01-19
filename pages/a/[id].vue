@@ -1,7 +1,7 @@
 <template>
   <NavWComp />
   <Navbar />
-  <div class="flex flex-col gap-8 w-full sm:p-48 p-4">
+  <div class="flex flex-col gap-8 w-full p-4">
     <!--article title-->
     <div class="text-center">
       <h1 class="text-5xl font-bold">Hello World. This is a title...</h1>
