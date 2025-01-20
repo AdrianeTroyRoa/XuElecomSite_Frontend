@@ -9,5 +9,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxtjs/tailwindcss"],
+  supabase: {
+    redirect: false,
+  },
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/supabase"],
 });
