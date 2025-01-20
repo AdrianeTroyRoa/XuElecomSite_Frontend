@@ -6,7 +6,7 @@
   >
     <div class="flex-col justify-center items-center text-center">
       <h2
-        class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900"
+        class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-primary"
       >
         Contact Us
       </h2>
@@ -36,7 +36,7 @@
         ></textarea>
         <br /><br />
         <div class="text-center mb-5">
-          <button class="btn">Send Message</button>
+          <button class="btn btn-primary">Send Message</button>
         </div>
       </form>
     </div>
