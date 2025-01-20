@@ -41,14 +41,16 @@
             <span class="text-sm">{{ formattedDateToday(post.date) }}</span>
           </div>
           <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-            <a href="#">{{ post.title }}</a>
+            <NuxtLink :to="{ name: 'post-id', params: { id: post.id } }">{{
+              post.title
+            }}</NuxtLink>
           </h2>
           <p class="mb-5 font-light text-gray-500">
             {{ post.content }}
           </p>
           <div class="flex justify-between items-center">
-            <a
-              href="#"
+            <NuxtLink
+              :to="{ name: 'post-id', params: { id: post.id } }"
               class="inline-flex items-center font-medium text-primary-600 hover:underline"
             >
               Read more
@@ -64,7 +66,7 @@
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </a>
+            </NuxtLink>
           </div>
         </article>
       </div>
