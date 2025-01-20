@@ -15,6 +15,7 @@
       <img
         :src="post.image_link"
         class="w-full max-w-2xl mx-auto rounded-lg shadow-md object-cover"
+        alt="article picture"
       />
     </div>
 
@@ -23,9 +24,7 @@
       <div class="sm:block hidden"></div>
 
       <!--Article proper-->
-      <article class="prose">
-        {{ post.content }}
-      </article>
+      <article class="prose" v-html="renderMarkdown(post.content)"></article>
 
       <!--Ad space/reminder-->
       <div class="sm:block hidden"></div>
@@ -59,12 +58,11 @@ const { data, error } = await client
   .from("Posts")
   .select()
   .eq("id", route.params.id);
-if (error | (data.length == 0)) {
+if (error || (data.length == 0)) {
   console.error("No database entry. Invalid id.");
   validUUID.value = false;
 } else {
   console.info("everything is alright!");
-  console.log(data);
 
   post.value = data.map((el) => ({ ...el, date: el.created_at }));
   post.value = post.value[0];
@@ -96,5 +94,8 @@ const formattedDateToday = (theDate) => {
   return date.toLocaleDateString("en-US", dateOptions);
 };
 
-//
+// render markdown content
+const renderMarkdown = (content) => {
+  return marked(content);
+};
 </script>
