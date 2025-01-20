@@ -15,7 +15,7 @@
           below
         </p>
       </div>
-      <div class="grid gap-8 lg:grid-cols-2" v-for="post in posts">
+      <div class="grid gap-8 lg:grid-cols-2" v-for="post in posts.slice(-4)">
         <article
           class="p-6 bg-white rounded-lg border border-gray-200 shadow-md"
         >
@@ -38,9 +38,7 @@
               </svg>
               Article
             </span>
-            <span class="text-sm">{{
-              formattedDateToday(post.created_at)
-            }}</span>
+            <span class="text-sm">{{ formattedDateToday(post.date) }}</span>
           </div>
           <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
             <a href="#">{{ post.title }}</a>
@@ -105,6 +103,7 @@ if (error) {
       post.content.length > maxDescLength
         ? post.content.slice(0, maxDescLength).concat("...")
         : post.content,
+    date: post.created_at,
   }));
 
   //logging to see data collected

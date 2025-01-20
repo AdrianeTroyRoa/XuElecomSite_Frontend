@@ -58,6 +58,18 @@
 // Import the markdown parser
 import { marked } from "marked";
 
+//Checks if param id is UUID format
+const checkIfUUID = (uuid) => {
+  const uuidRegex =
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  return uuidRegex.test(uuid);
+};
+definePageMeta({
+  validate: async (route) => {
+    return typeof route.params.id === "string" && checkIfUUID(route.params.id);
+  },
+});
+
 // Reactive content for displaying the datetime
 const dateToday = new Date();
 const dateOptions = {
