@@ -90,7 +90,11 @@
               </a>
 
               <!-- X (formerly Twitter) logo-->
-              <a target="_blank" class="btn btn-link">
+              <a
+                target="_blank"
+                class="btn btn-link"
+                href="https://x.com/xucsgelecom"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="34"
@@ -106,7 +110,11 @@
               </a>
 
               <!-- Instagram logo -->
-              <a target="_blank" class="btn btn-link">
+              <a
+                target="_blank"
+                class="btn btn-link"
+                href="https://www.instagram.com/xucsg_elecom/"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
