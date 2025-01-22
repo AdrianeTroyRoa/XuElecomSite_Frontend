@@ -1,8 +1,10 @@
 <template>
   <section
-    class="min-h-screen flex flex-col justify-center bg-accent"
+    :style="{ backgroundImage: `url(${bgImage})` }"
+    class="min-h-screen flex flex-col justify-center"
     id="posts"
   >
+    <div class=""></div>
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
         <h2
@@ -71,12 +73,13 @@
         </article>
       </div>
       <div class="my-12 flex justify-center">
-        <button class="btn">See more</button>
+        <button class="btn" v-show="posts.length > 4">See more</button>
       </div>
     </div>
   </section>
 </template>
 <script setup>
+import bgImage from "@/assets/bgPosts.png";
 // displaying the date with appropriate format
 const dateOptions = {
   month: "short",
@@ -108,11 +111,16 @@ if (error) {
     date: post.created_at,
   }));
 
+  //logging to see number of posts
+  console.info("Posts number:", posts.value.length);
+
+  /*
   //logging to see data collected
   posts.value.forEach((data) => {
     console.log("title:", data.title);
     console.log("description:", data.content);
-    console.log("date:", data.image_link);
+    console.log("date:", data.date);
   });
+  */
 }
 </script>
