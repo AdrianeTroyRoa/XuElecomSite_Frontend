@@ -8,15 +8,12 @@
           width="24"
           height="24"
           viewBox="0 0 24 24"
-          stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          fill="white"
           v-if="isSidebarOpen"
-          fill="none"
         >
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <rect y="4" width="24" height="2"></rect>
+          <rect y="11" width="24" height="2"></rect>
+          <rect y="18" width="24" height="2"></rect>
         </svg>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -34,23 +31,44 @@
 
     <!-- Sidebar -->
     <div
-      :class="{
-        'translate-x-0': isSidebarOpen,
-        'translate-x-full': !isSidebarOpen,
-      }"
-      class="text-white fixed top-0 right-0 h-full w-full max-w-64 bg-primary transform transition-transform duration-300 ease-in-out"
+      :class="[
+        'text-white fixed top-0 right-0 h-full w-full max-w-64 bg-accent transform transition-transform duration-300 ease-in-out flex flex-col justify-between',
+        isSidebarOpen ? 'translate-x-0' : 'translate-x-full',
+      ]"
     >
-      <NuxtLink to="/#home" class="btn btn-ghost text-l">Home</NuxtLink>
-      <NuxtLink to="/#posts" class="btn btn-ghost text-l">Posts</NuxtLink>
-      <NuxtLink to="/#contact" class="btn btn-ghost text-l">Contact</NuxtLink>
+      <ul class="p-4 space-y-4 mt-24">
+        <li>
+          <NuxtLink
+            to="/#home"
+            class="btn btn-ghost text-lg font-light"
+            @click="toggleSidebar"
+            >Home</NuxtLink
+          >
+        </li>
+        <li>
+          <NuxtLink
+            to="/#posts"
+            class="btn btn-ghost text-lg font-light"
+            @click="toggleSidebar"
+            >Posts</NuxtLink
+          >
+        </li>
+        <li>
+          <NuxtLink
+            to="/#contact"
+            class="btn btn-ghost text-lg font-light"
+            @click="toggleSidebar"
+            >Contact</NuxtLink
+          >
+        </li>
+      </ul>
+      <div class="text-center p-4 italic text-sm font-extralight">
+        <hr />
+        <br>
+        &copy; XU-CSG Elecom Systems <br />
+        AY 2425
+      </div>
     </div>
-
-    <!-- Overlay -->
-    <div
-      v-if="isSidebarOpen"
-      @click="toggleSidebar"
-      class="fixed inset-0 bg-black bg-opacity-50 lg:hidden z-30"
-    ></div>
   </div>
 </template>
 
