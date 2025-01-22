@@ -1,7 +1,7 @@
 <template>
-  <NavWComp />
   <Navbar />
-  <div class="flex flex-col gap-8 w-full p-4">
+  <NavWComp />
+  <div class="flex flex-col gap-8 w-full px-4 py-12">
     <!--article title-->
     <div class="text-center">
       <h1 class="text-5xl font-bold">{{ post.title }}</h1>
@@ -58,7 +58,7 @@ const { data, error } = await client
   .from("Posts")
   .select()
   .eq("id", route.params.id);
-if (error || (data.length == 0)) {
+if (error || data.length == 0) {
   console.error("No database entry. Invalid id.");
   validUUID.value = false;
 } else {
