@@ -4,5 +4,6 @@
     <Hero />
     <Posts />
     <Contacts />
+    <Footer />
   </div>
 </template>
