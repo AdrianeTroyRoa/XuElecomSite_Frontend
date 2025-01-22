@@ -13,14 +13,20 @@
       </nuxt-link>
     </div>
     <div class="flex-none">
-      <nuxt-link class="sm:btn sm:btn-ghost sm:text-l hidden" to="/#home"
-        >Home</nuxt-link
+      <NuxtLink
+        class="sm:btn sm:btn-link sm:text-black sm:no-underline sm:hover:no-underline sm:hover:text-secondary sm:text-l hidden"
+        to="/#home"
+        >Home</NuxtLink
       >
-      <nuxt-link class="sm:btn sm:btn-ghost sm:text-l hidden" to="/#posts"
-        >Posts</nuxt-link
+      <NuxtLink
+        class="sm:btn sm:btn-link sm:text-black sm:no-underline sm:hover:no-underline sm:hover:text-secondary sm:text-l hidden"
+        to="/#posts"
+        >Posts</NuxtLink
       >
-      <nuxt-link class="sm:btn sm:btn-ghost sm:text-l hidden" to="/#contact"
-        >Contact</nuxt-link
+      <NuxtLink
+        class="sm:btn sm:btn-link sm:text-black sm:no-underline sm:hover:no-underline sm:hover:text-secondary sm:text-l hidden"
+        to="/#contact"
+        >Contact</NuxtLink
       >
       <Sidebar class="sm:hidden" />
     </div>

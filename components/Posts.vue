@@ -18,7 +18,7 @@
         </p>
       </div>
       <div class="grid gap-8 lg:grid-cols-2">
-        <div v-for="post in posts.slice(-4)">
+        <div v-for="post in posts.slice(-4).reverse()">
           <article
             class="p-6 bg-white rounded-lg border border-gray-200 shadow-md"
           >
