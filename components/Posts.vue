@@ -21,7 +21,14 @@
         v-if="posts.length === 0"
         class="text-white text-zinc-100 font-extrabold text-center"
       >
+      <div>
         No articles available yet. Stay tuned!
+      </div>
+      <div class="my-12 flex justify-center">
+        <NuxtLink class="btn" to="/posts"
+          >See archive</NuxtLink
+        >
+      </div>
       </div>
       <div class="grid gap-8 lg:grid-cols-2" v-else>
         <div v-for="post in posts.slice(-4).reverse()">
