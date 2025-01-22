@@ -30,6 +30,7 @@
       <div class="sm:block hidden"></div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script setup lang="ts">
