@@ -15,7 +15,12 @@
       </p>
     </div>
     <div class="mt-5">
-      <form method="POST" name="contact" class="max-w-lg mx-auto">
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        class="max-w-lg mx-auto"
+      >
         <div v-for="(item, index) in inputItems" :key="index">
           <div class="mb-5">
             <input

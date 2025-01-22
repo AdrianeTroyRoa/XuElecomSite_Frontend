@@ -17,7 +17,13 @@
           below
         </p>
       </div>
-      <div class="grid gap-8 lg:grid-cols-2">
+      <div
+        v-if="posts.length === 0"
+        class="text-white text-zinc-100 font-extrabold text-center"
+      >
+        No articles available yet. Stay tuned!
+      </div>
+      <div class="grid gap-8 lg:grid-cols-2" v-else>
         <div v-for="post in posts.slice(-4).reverse()">
           <article
             class="p-6 bg-white rounded-lg border border-gray-200 shadow-md"
@@ -75,7 +81,9 @@
         </div>
       </div>
       <div class="my-12 flex justify-center">
-        <button class="btn" v-show="posts.length > 4">See more</button>
+        <NuxtLink class="btn" v-show="posts.length >= 4" to="/posts"
+          >See more</NuxtLink
+        >
       </div>
     </div>
   </section>
@@ -104,18 +112,16 @@ if (error) {
   console.error(error);
 } else {
   //transferring data values to post
-  posts.value = data.map((post) => ({
-    ...post,
-    content:
-      post.content.length > maxDescLength
-        ? post.content.slice(0, maxDescLength).concat("...")
-        : post.content,
-    date: post.created_at,
-  }));
-
-  //logging to see number of posts
-  console.info("Posts number:", posts.value.length);
-
+  //posts.value = data.map((post) => ({
+  //  ...post,
+  //  content:
+  //    post.content.length > maxDescLength
+  //      ? post.content.slice(0, maxDescLength).concat("...")
+  //      : post.content,
+  //  date: post.created_at,
+  //}));
+  ////logging to see number of posts
+  //console.info("Posts number:", posts.value.length);
   /*
   //logging to see data collected
   posts.value.forEach((data) => {
