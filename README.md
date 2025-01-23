@@ -25,3 +25,10 @@ git clone https://github.com/your-repo/xu-csg-elecom-2025.git
 cd xu-csg-elecom-2025
 npm i
 npm run dev
+```
+
+## Backend Access
+For backend access or API keys, please contact the developer.
+
+## Contact
+For inquiries, please contact Adriane Troy Roa at [troyroa50@gmail.com].
