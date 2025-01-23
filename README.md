@@ -1,75 +1,27 @@
-# Nuxt Minimal Starter
+# XU-CSG EleCom Site 2025
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![XU EleCom 2025 Banner](https://vdhtlmptdfpbtenigido.supabase.co/storage/v1/object/public/post-thumbnails/banner%20(fb).png)
 
-## Setup
+## Description
+This is the codebase for the commission site revamp. Learn more by visiting the official link at [XU-CSG EleCom Site](https://xucsg-elecom.netlify.app).
 
-Make sure to install dependencies:
+## Tech Stack
+- **Nuxt** - Frontend
+- **Supabase** - Backend
+- **Supabase Buckets** - Storage
+- **Supabase Database** - Database
 
-```bash
-# npm
-npm install
+## Features
+- Modern UI/UX design
+- Fully responsive layout
+- Real-time data updates via Supabase
+- Secure and scalable backend
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Preview
+Clone the repository and run the project locally:
 
 ```bash
-# npm
+git clone https://github.com/your-repo/xu-csg-elecom-2025.git
+cd xu-csg-elecom-2025
+npm i
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
