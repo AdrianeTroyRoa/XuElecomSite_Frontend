@@ -81,7 +81,7 @@
             </g>
           </svg>
         </div>
-        <div class="text-xl font-light">Still importing past articles...</div>
+        <div class="text-xl font-light">Still migrating past articles...</div>
       </div>
     </div>
   </div>
