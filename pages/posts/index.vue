@@ -16,14 +16,15 @@
             class="p-6 bg-white rounded-lg border border-gray-200 shadow-md"
           >
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-              <NuxtLink :to="{ name: 'post-id', params: { id: post.id } }">{{
-                post.title
-              }}</NuxtLink>
+              <NuxtLink
+                :to="{ name: 'posts-slug', params: { slug: post.slug } }"
+                >{{ post.title }}</NuxtLink
+              >
             </h2>
             <span class="text-sm">{{ formattedDateToday(post.date) }}</span>
             <div class="flex justify-between items-center">
               <NuxtLink
-                :to="{ name: 'post-id', params: { id: post.id } }"
+                :to="{ name: 'posts-slug', params: { slug: post.slug } }"
                 class="inline-flex items-center font-medium text-primary-600 hover:underline"
               >
                 Read
@@ -116,7 +117,7 @@ if (error) {
   }));
 
   //logging to see number of posts
-  console.info("Posts number:", posts.value.length);
+  console.info("🔢 Posts number:", posts.value.length);
 
   /*
   //logging to see data collected

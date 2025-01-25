@@ -43,38 +43,51 @@ const route = useRoute();
 
 //handle post proper
 const post = ref([]);
-//for id if valid via supabase entry
-const validUUID = ref(true);
-
-//Checks if param id is UUID format and has supabase entry
-const checkIfUUID = (uuid) => {
-  const uuidRegex =
-    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-
-  return uuidRegex.test(uuid);
+////for id if valid via supabase entry
+const validSlug = ref(true);
+//
+////Checks if param id is UUID format and has supabase entry
+//const checkIfUUID = (uuid) => {
+//  const uuidRegex =
+//    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+//
+//  return uuidRegex.test(uuid);
+//};
+const isValidSlug = (slug) => {
+  const slugRegex = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+  return slugRegex.test(slug);
 };
-
 //supabase fetching
-const { data, error } = await client
-  .from("Posts")
-  .select()
-  .eq("id", route.params.id);
-if (error || data.length == 0) {
-  console.error("No database entry. Invalid id.");
-  validUUID.value = false;
-} else {
-  console.info("everything is alright!");
+try {
+  const { data, error } = await client
+    .from("Posts")
+    .select()
+    .eq("slug", route.params.slug);
+  if (error || data.length == 0) {
+    console.error("😓 No database entry. Invalid link.");
+    throw createError({
+      statusCode: 404,
+      statusMessage: `Page Not Found: ${route.href}`,
+    });
+  } else {
+    console.info("📰 Article loaded successfully.");
 
-  post.value = data.map((el) => ({ ...el, date: el.created_at }));
-  post.value = post.value[0];
+    post.value = data.map((el) => ({ ...el, date: el.created_at }));
+    post.value = post.value[0];
+  }
+} catch (err) {
+  console.error("⚠️ Probably no database entry or unexpected error.");
+  console.error(err);
+  throw createError({
+    statusCode: 404,
+    statusMessage: `Page Not Found: ${route.href}`,
+  });
 }
 
 definePageMeta({
   validate: async (route) => {
     return (
-      typeof route.params.id === "string" &&
-      checkIfUUID(route.params.id) &&
-      validUUID.value
+      typeof route.params.slug === "string" && isValidSlug(route.params.slug)
     );
   },
 });
@@ -97,6 +110,13 @@ const formattedDateToday = (theDate) => {
 
 // render markdown content
 const renderMarkdown = (content) => {
-  return marked(content);
+  let convertedContent = "";
+  try {
+    convertedContent = marked(content);
+  } catch (err) {
+    console.error("❌ No valid content for markdown.", err);
+    convertedContent = "Nil";
+  }
+  return convertedContent;
 };
 </script>
