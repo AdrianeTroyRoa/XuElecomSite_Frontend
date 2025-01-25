@@ -21,7 +21,7 @@ This is the codebase for the commission site revamp. Learn more by visiting the 
 Clone the repository and run the project locally:
 
 ```bash
-git clone https://github.com/AdrianeTroyRoa/XuElecomSite_Frontend.git
+git clone https://github.com/AdrianeTroyRoa/XuElecomSite_Frontend.git xu-csg-elecom-2025
 cd xu-csg-elecom-2025
 npm i
 npm run dev
