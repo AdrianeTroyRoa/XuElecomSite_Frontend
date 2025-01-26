@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar w-full top-0 z-20 p-4">
     <div class="flex-1">
-      <nuxt-link class="btn btn-ghost hover:bg-gray-100" to="/">
+      <NuxtLink class="btn btn-ghost hover:bg-transparent" to="/">
         <div column>
           <div class="text-xl text-primary font-bold">BOTAR ATENISTA</div>
           <div
@@ -10,7 +10,7 @@
             THINK. ACT. VOTE.
           </div>
         </div>
-      </nuxt-link>
+      </NuxtLink>
     </div>
     <div class="flex-none">
       <NuxtLink
