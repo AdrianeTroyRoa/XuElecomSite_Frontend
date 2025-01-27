@@ -12,5 +12,12 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false,
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/supabase"],
+  site: {
+    url: 'https://xucsg-elecom.netlify.app',
+    name: 'XU-CSG EleCom | Official Website',
+  },
+  sitemap: {
+    sources: ["/api/__sitemap__/urls"],
+  },
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/supabase", "@nuxtjs/sitemap"],
 });
