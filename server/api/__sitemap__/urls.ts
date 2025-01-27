@@ -7,7 +7,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 export default defineSitemapEventHandler(async () => {
   const { data, error } = await supabase
     .from("Posts")
-    .select("slug, image_link");
+    .select("slug, image_link, updated_at");
 
   if (error) {
     throw createError({
@@ -19,6 +19,7 @@ export default defineSitemapEventHandler(async () => {
   // Map the slugs to the required URL format
   const urls = data.map((item) => ({
     loc: `/posts/${item.slug}`,
+    lastmod: new Date(item.updated_at).toISOString(),
     images: [
       {
         loc: item.image_link,
