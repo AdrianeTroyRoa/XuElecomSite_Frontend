@@ -16,9 +16,9 @@
     </div>
     <div class="mt-5">
       <form
-        name="contact"
+        name="kontaka"
         method="POST"
-        data-netlify="true"
+        netlify
         class="max-w-lg mx-auto"
       >
         <div v-for="(item, index) in inputItems" :key="index">
