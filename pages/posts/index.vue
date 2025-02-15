@@ -111,10 +111,12 @@ if (error) {
   console.error(error);
 } else {
   //transferring data values to post
-  posts.value = data.map((post) => ({
-    ...post,
-    date: post.created_at,
-  }));
+  posts.value = data
+    .filter((post) => post.status)
+    .map((post) => ({
+      ...post,
+      date: post.created_at,
+    }));
 
   //logging to see number of posts
   console.info("🔢 Posts number:", posts.value.length);
