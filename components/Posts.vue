@@ -21,14 +21,10 @@
         v-if="posts.length === 0"
         class="text-white text-zinc-100 font-extrabold text-center"
       >
-      <div>
-        No articles available yet. Stay tuned!
-      </div>
-      <div class="my-12 flex justify-center">
-        <NuxtLink class="btn" to="/posts"
-          >See archive</NuxtLink
-        >
-      </div>
+        <div>No articles available yet. Stay tuned!</div>
+        <div class="my-12 flex justify-center">
+          <NuxtLink class="btn" to="/posts">See archive</NuxtLink>
+        </div>
       </div>
       <div class="grid gap-8 lg:grid-cols-2" v-else>
         <div v-for="post in posts.slice(-4).reverse()">
@@ -57,16 +53,17 @@
               <span class="text-sm">{{ formattedDateToday(post.date) }}</span>
             </div>
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-              <NuxtLink :to="{ name: 'post-id', params: { id: post.id } }">{{
-                post.title
-              }}</NuxtLink>
+              <NuxtLink
+                :to="{ name: 'posts-slug', params: { slug: post.slug } }"
+                >{{ post.title }}</NuxtLink
+              >
             </h2>
             <p class="mb-5 font-light text-gray-500">
               {{ post.content }}
             </p>
             <div class="flex justify-between items-center">
               <NuxtLink
-                :to="{ name: 'post-id', params: { id: post.id } }"
+                :to="{ name: 'posts-slug', params: { slug: post.slug } }"
                 class="inline-flex items-center font-medium text-primary-600 hover:underline"
               >
                 Read more
@@ -119,23 +116,25 @@ if (error) {
   console.error(error);
 } else {
   //transferring data values to post
-  //posts.value = data.map((post) => ({
-  //  ...post,
-  //  content:
-  //    post.content.length > maxDescLength
-  //      ? post.content.slice(0, maxDescLength).concat("...")
-  //      : post.content,
-  //  date: post.created_at,
-  //}));
-  ////logging to see number of posts
-  //console.info("Posts number:", posts.value.length);
-  /*
+  posts.value = data
+    .filter(
+      (post) => post.status && new Date(post.created_at).getFullYear() === 2025,
+    )
+    .map((post) => ({
+      ...post,
+      content:
+        post.content.length > maxDescLength
+          ? post.content.slice(0, maxDescLength).concat("...")
+          : post.content,
+      date: post.created_at,
+    }));
+  //logging to see number of posts
+  console.info("Posts number:", posts.value.length);
   //logging to see data collected
   posts.value.forEach((data) => {
     console.log("title:", data.title);
     console.log("description:", data.content);
     console.log("date:", data.date);
   });
-  */
 }
 </script>
