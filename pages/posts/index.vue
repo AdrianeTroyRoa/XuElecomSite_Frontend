@@ -10,39 +10,164 @@
           Posts Archive
         </h2>
       </div>
-      <div class="grid gap-8 lg:grid-cols-2">
-        <div v-for="post in posts">
-          <article
-            class="p-6 bg-white rounded-lg border border-gray-200 shadow-md"
+      <div class="min-h-screen">
+        <div role="tablist" class="tabs tabs-lifted">
+          <input
+            type="radio"
+            name="my_tabs_2"
+            role="tab"
+            class="tab"
+            aria-label="Memoranda"
+          />
+          <div
+            role="tabpanel"
+            class="tab-content bg-base-100 border-base-300 rounded-box p-6"
           >
-            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-              <NuxtLink
-                :to="{ name: 'posts-slug', params: { slug: post.slug } }"
-                >{{ post.title }}</NuxtLink
-              >
-            </h2>
-            <span class="text-sm">{{ formattedDateToday(post.date) }}</span>
-            <div class="flex justify-between items-center">
-              <NuxtLink
-                :to="{ name: 'posts-slug', params: { slug: post.slug } }"
-                class="inline-flex items-center font-medium text-primary-600 hover:underline"
-              >
-                Read
-                <svg
-                  class="ml-2 w-4 h-4"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div class="grid gap-8 lg:grid-cols-2">
+              <div v-for="post in memos">
+                <article
+                  class="p-6 bg-white rounded-lg border border-gray-200 shadow-md"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </NuxtLink>
+                  <h2
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900"
+                  >
+                    <NuxtLink
+                      :to="{ name: 'posts-slug', params: { slug: post.slug } }"
+                      >{{ post.title }}</NuxtLink
+                    >
+                  </h2>
+                  <span class="text-sm">{{
+                    formattedDateToday(post.date)
+                  }}</span>
+                  <div class="flex justify-between items-center">
+                    <NuxtLink
+                      :to="{ name: 'posts-slug', params: { slug: post.slug } }"
+                      class="inline-flex items-center font-medium text-primary-600 hover:underline"
+                    >
+                      Read
+                      <svg
+                        class="ml-2 w-4 h-4"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </NuxtLink>
+                  </div>
+                </article>
+              </div>
             </div>
-          </article>
+          </div>
+
+          <input
+            type="radio"
+            name="my_tabs_2"
+            role="tab"
+            class="tab"
+            aria-label="Resolutions"
+            checked="checked"
+          />
+          <div
+            role="tabpanel"
+            class="tab-content bg-base-100 border-base-300 rounded-box p-6"
+          >
+            <div class="grid gap-8 lg:grid-cols-2">
+              <div v-for="post in resos">
+                <article
+                  class="p-6 bg-white rounded-lg border border-gray-200 shadow-md"
+                >
+                  <h2
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900"
+                  >
+                    <NuxtLink
+                      :to="{ name: 'posts-slug', params: { slug: post.slug } }"
+                      >{{ post.title }}</NuxtLink
+                    >
+                  </h2>
+                  <span class="text-sm">{{
+                    formattedDateToday(post.date)
+                  }}</span>
+                  <div class="flex justify-between items-center">
+                    <NuxtLink
+                      :to="{ name: 'posts-slug', params: { slug: post.slug } }"
+                      class="inline-flex items-center font-medium text-primary-600 hover:underline"
+                    >
+                      Read
+                      <svg
+                        class="ml-2 w-4 h-4"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </NuxtLink>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <input
+            type="radio"
+            name="my_tabs_2"
+            role="tab"
+            class="tab"
+            aria-label="Articles"
+          />
+          <div
+            role="tabpanel"
+            class="tab-content bg-base-100 border-base-300 rounded-box p-6"
+          >
+            <div class="grid gap-8 lg:grid-cols-2">
+              <div v-for="post in articles">
+                <article
+                  class="p-6 bg-white rounded-lg border border-gray-200 shadow-md"
+                >
+                  <h2
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900"
+                  >
+                    <NuxtLink
+                      :to="{ name: 'posts-slug', params: { slug: post.slug } }"
+                      >{{ post.title }}</NuxtLink
+                    >
+                  </h2>
+                  <span class="text-sm">{{
+                    formattedDateToday(post.date)
+                  }}</span>
+                  <div class="flex justify-between items-center">
+                    <NuxtLink
+                      :to="{ name: 'posts-slug', params: { slug: post.slug } }"
+                      class="inline-flex items-center font-medium text-primary-600 hover:underline"
+                    >
+                      Read
+                      <svg
+                        class="ml-2 w-4 h-4"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </NuxtLink>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="flex items-center justify-center gap-5 p-12">
@@ -103,6 +228,9 @@ const formattedDateToday = (theDate) => {
 //supabase fetching
 const client = useSupabaseClient();
 const posts = ref([]);
+const memos = ref([]);
+const resos = ref([]);
+const articles = ref([]);
 const maxDescLength = 200;
 
 const { data, error } = await client.from("Posts").select();
@@ -118,6 +246,19 @@ if (error) {
       date: post.created_at,
     }));
 
+  memos.value = posts.value
+    .filter((post) => post.type == "Memorandum")
+    .map((post) => ({ ...post }));
+
+  resos.value = posts.value
+    .filter((post) => post.type == "Resolution")
+    .map((post) => ({ ...post }));
+
+  articles.value = posts.value
+    .filter((post) => post.type == "Article")
+    .map((post) => ({ ...post }));
+
+  console.log("resos: ", resos.value);
   //logging to see number of posts
   console.info("🔢 Posts number:", posts.value.length);
 
