@@ -59,7 +59,7 @@
               >
             </h2>
             <p class="mb-5 font-light text-gray-500">
-              {{ post.content }}
+              {{ post.content.replace(/\*\*|###|\*/g, "") }}
             </p>
             <div class="flex justify-between items-center">
               <NuxtLink
