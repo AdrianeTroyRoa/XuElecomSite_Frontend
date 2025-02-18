@@ -30,7 +30,7 @@
         <div v-for="(item, index) in inputItems" :key="index">
           <div class="mb-5">
             <input
-              type="text"
+              :type="item === 'email' ? 'email' : 'text'"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-96 sm:w-64 p-2.5"
               :name="item"
               :placeholder="item.charAt(0).toUpperCase() + item.slice(1)"
