@@ -131,10 +131,10 @@ if (error) {
   //logging to see number of posts
   console.info("Posts number:", posts.value.length);
   //logging to see data collected
-  posts.value.forEach((data) => {
+  /*posts.value.forEach((data) => {
     console.log("title:", data.title);
     console.log("description:", data.content);
     console.log("date:", data.date);
-  });
+  });*/
 }
 </script>
