@@ -20,6 +20,7 @@
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
         class="max-w-lg mx-auto"
       >
         <input type="hidden" name="form-name" value="contact" />
@@ -45,6 +46,7 @@
           required
         ></textarea>
         <br /><br />
+        <div data-netlify-recaptcha="true"></div>
         <div class="text-center mb-5">
           <button class="btn btn-primary">Send Message</button>
         </div>
