@@ -134,9 +134,103 @@
       </div>
     </div>
     <div><!--To ensure previous div is centered--></div>
+    <transition name="fade-scale">
+      <div
+        v-if="modalOpen"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+        @click="closeModal"
+      >
+        <div class="bg-white p-6 rounded-lg shadow-lg relative" @click.stop>
+          <button
+            class="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+            @click="closeModal"
+          >
+            ✕
+          </button>
+
+          <div class="relative w-full sm:h-[44em] h-96">
+            <img
+              :src="images[currentIndex]"
+              class="w-full h-full object-cover rounded-md transition-all"
+              alt="Image"
+            />
+
+            <button
+              @click="prevImage"
+              class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+            >
+              ◀
+            </button>
+
+            <button
+              @click="nextImage"
+              class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+            >
+              ▶
+            </button>
+          </div>
+          <button
+            class="w-full mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg"
+            @click="goToFbCalendar"
+          >
+            See More
+          </button>
+        </div>
+      </div>
+    </transition>
   </section>
 </template>
 
 <script setup>
 import bgImage from "@/assets/background.png";
+
+const modalOpen = ref(false);
+const currentIndex = ref(0);
+const images = [
+  "https://vdhtlmptdfpbtenigido.supabase.co/storage/v1/object/public/post-thumbnails/calendar-of-events/1.jpg",
+  "https://vdhtlmptdfpbtenigido.supabase.co/storage/v1/object/public/post-thumbnails/calendar-of-events/2.jpg",
+  "https://vdhtlmptdfpbtenigido.supabase.co/storage/v1/object/public/post-thumbnails/calendar-of-events/3.jpg",
+  "https://vdhtlmptdfpbtenigido.supabase.co/storage/v1/object/public/post-thumbnails/calendar-of-events/4.jpg",
+];
+
+onMounted(() => {
+  setTimeout(() => {
+    modalOpen.value = true;
+  }, 2000);
+});
+
+const closeModal = () => {
+  modalOpen.value = false;
+};
+
+const goToFbCalendar = () => {
+  window.open(
+    "https://www.facebook.com/permalink.php?story_fbid=pfbid02thSTtcJ34FZBWagTeeZwv7tHDtmj8RmkKkkqvq1pZkjKthnqVHwS8sGM8Jxv74rfl&id=61566344823082",
+    "_blank",
+  );
+  modalOpen.value = false;
+};
+
+const nextImage = () => {
+  currentIndex.value = (currentIndex.value + 1) % images.length;
+};
+
+const prevImage = () => {
+  currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
+};
 </script>
+<style>
+/* Fade & Scale Animation */
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.fade-scale-enter-from,
+.fade-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+</style>
