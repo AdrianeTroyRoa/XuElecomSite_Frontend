@@ -46,7 +46,10 @@
           required
         ></textarea>
         <br /><br />
-        <div data-netlify-recaptcha="true" class="text-center mb-3"></div>
+        <div
+          data-netlify-recaptcha="true"
+          class="flex justify-center mb-3"
+        ></div>
         <div class="text-center mb-5">
           <button class="btn btn-primary">Send Message</button>
         </div>
